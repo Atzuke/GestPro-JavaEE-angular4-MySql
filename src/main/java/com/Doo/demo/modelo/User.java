@@ -14,59 +14,59 @@ public class User extends ParentEntity{
 	private static final long serialVersionUID = 4064159245991343351L;
 	
 	
-	@Column(name = "Nombre", nullable = false, length=255)
-	private String Nombre;
+	@Column(name = "Nombre", nullable= false, length=45)
+	private String nombre;
 	
-	@Column(name = "Apellido", nullable = false, length=255)
-	private String Apellido;
+	@Column(name = "Apellido", nullable = true, length=45)
+	private String apellido;
 	
 	@Column(name = "Correo", nullable = false, length=255)
-	private String Correo;
+	private String correo;
 	
-	@Column(name = "Telefono", nullable = false, length=255)
-	private String Telefono;
+	@Column(name = "Telefono", nullable = true, length=45)
+	private String telefono;
 	
-	@Column(name = "Constraseña", nullable = false, length=255)
-	private String Contraseña;
+	@Column(name = "Contraseña", nullable = false, length=45)
+	private String contraseña;
 	
-	@Column(name = "Empresa", nullable = false, length=255)
-	private String Empresa;
+	@Column(name = "Empresa", nullable = true, length=45)
+	private String empresa;
 	
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
 	public void setNombre(String nombre) {
-		Nombre = nombre;
+		this.nombre = nombre;
 	}
 	public String getApellido() {
-		return Apellido;
+		return apellido;
 	}
 	public void setApellido(String apellido) {
-		Apellido = apellido;
+		this.apellido = apellido;
 	}
 	public String getCorreo() {
-		return Correo;
+		return correo;
 	}
 	public void setCorreo(String correo) {
-		Correo = correo;
+		this.correo = correo;
 	}
 	public String getTelefono() {
-		return Telefono;
+		return telefono;
 	}
 	public void setTelefono(String telefono) {
-		Telefono = telefono;
+		this.telefono = telefono;
 	}
 	public String getContraseña() {
-		return Contraseña;
+		return contraseña;
 	}
 	public void setContraseña(String contraseña) {
-		Contraseña = contraseña;
+		this.contraseña = contraseña;
 	}
 	public String getEmpresa() {
-		return Empresa;
+		return empresa;
 	}
 	public void setEmpresa(String empresa) {
-		Empresa = empresa;
+		this.empresa = empresa;
 	}
 	
 	

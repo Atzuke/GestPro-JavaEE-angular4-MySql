@@ -12,5 +12,9 @@ public interface UserService {
 	//recupera la lista de usuarios
 	List<User> findAll();
 
+	
+	// elimina usuario con el id magico.
+	void deleteUser(Long id);
+
 
 }

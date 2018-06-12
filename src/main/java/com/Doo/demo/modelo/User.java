@@ -14,6 +14,7 @@ public class User extends ParentEntity{
 	private static final long serialVersionUID = 4064159245991343351L;
 	
 	
+	//indicando ubicacion en la base de datos e inicializando variables
 	@Column(name = "Nombre", nullable= false, length=45)
 	private String nombre;
 	

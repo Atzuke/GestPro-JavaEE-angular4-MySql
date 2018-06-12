@@ -21,6 +21,8 @@ import antlr.StringUtils;
 
 @RestController
 public class Usercontroller {
+	
+	User usuario = new User();
 
 	@Autowired
 	protected UserService userService;
@@ -50,6 +52,29 @@ public class Usercontroller {
 	@RequestMapping(value="/getUsers", method = RequestMethod.GET)
 	public List<User> getUsers() {
 		return this.userService.findAll();
+	}
+	
+	@RequestMapping(value="/Login", method = RequestMethod.POST)
+	public RestResponse Login(@RequestBody String userJson)
+			throws JsonParseException, JsonMappingException, IOException {
+		
+		this.mapper = new ObjectMapper();
+		
+		User user = this.mapper.readValue(userJson, User.class);
+		
+		if (this.userService.Login(user) == null) {
+			
+		    return new RestResponse(HttpStatus.NOT_ACCEPTABLE.value(),"Los datos no concuerdan o no existen");
+		}
+		else {
+			
+			usuario = this.userService.Login(user);
+			String a = usuario.getApellido();
+			return new RestResponse(HttpStatus.OK.value(), "Te loggeaste " + a);
+		}
+			
+			
+			
 	}
 	
 	@RequestMapping(value="/deleteUser", method = RequestMethod.POST)

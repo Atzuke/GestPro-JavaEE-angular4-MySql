@@ -29,4 +29,15 @@ public class UserServicelmpl implements UserService {
 		this.userRepository.deleteById(id);
 		
 	}
+
+	@Override
+	public User Login(User user) {
+		
+		List<User> usuarios = this.userRepository.findAll();
+		for(User u: usuarios)
+			if(user.getCorreo().equals( u.getCorreo())  && user.getContraseña().equals(u.getContraseña())) {
+				return u;
+			}
+		return null;
+	}
 }

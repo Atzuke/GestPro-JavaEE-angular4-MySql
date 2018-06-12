@@ -16,5 +16,9 @@ public interface UserService {
 	// elimina usuario con el id magico.
 	void deleteUser(Long id);
 
+	
+	//Logearse
+	User Login(User user);
+
 
 }

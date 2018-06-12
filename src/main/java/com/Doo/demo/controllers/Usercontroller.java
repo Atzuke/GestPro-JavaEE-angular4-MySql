@@ -1,6 +1,7 @@
 package com.Doo.demo.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,6 +45,11 @@ public class Usercontroller {
 		this.userService.save(user);
 		return new RestResponse(HttpStatus.OK.value(), "La operación tuvo exito");
 		
+	}
+	
+	@RequestMapping(value="/getUsers", method = RequestMethod.GET)
+	public List<User> getUsers() {
+		return this.userService.findAll();
 	}
 	
 	private boolean validate(User user) {
